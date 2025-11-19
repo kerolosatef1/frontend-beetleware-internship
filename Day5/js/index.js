@@ -7,6 +7,7 @@ request.addEventListener('load', function() {
 
 */
 
+
 const countriesContainer = document.getElementById('countriesContainer');
 
 function getCountryData(countryName) {
