@@ -32,8 +32,6 @@ function getCountryData(countryName) {
     setTimeout(() => newCard.style.opacity = 1, 100);
   });
 }
-
-
 getCountryData('portugal');
 getCountryData('united states of america');
 getCountryData('germany');
@@ -45,4 +43,6 @@ getCountryData('Brazil');
 getCountryData('Canada');
 getCountryData('France');
 getCountryData('japan');  
+
+
 
