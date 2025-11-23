@@ -114,7 +114,7 @@ function debounce(func, delay) {
 /* --- SEARCH COUNTRIES WITH DEBOUNCE --- */
 const handleSearch = debounce(async () => {
   const query = searchInput.value.trim().toLowerCase();
-  countriesContainer.innerHTML = ""; // مسح المحتوى الحالي
+  countriesContainer.insertAdjacentHTML = ""; // مسح المحتوى الحالي
   if (query) {
     await getCountryData(query);
     observeCards();
@@ -122,3 +122,4 @@ const handleSearch = debounce(async () => {
 }, 500); // 500ms delay
 
 searchInput.addEventListener("input", handleSearch);
+
