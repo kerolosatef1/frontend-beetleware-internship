@@ -44,8 +44,63 @@ enum Direction {
 }
 console.log(Direction.Left); // 4
 
+//partial type
+type User = {
+  username: string;
+  age: number;
+  email: string;
+};
+
+const u1: User = {
+  username: "John",
+  age: 25,
+  email: "john@mail.com"
+};
+
+const u2: Partial<User> = {
+  username: "John"
+};
+const u3: Partial<User> = {
+  age: 30
+};
+
 */
-// arrayHelpers.ts
+/*
+
+فكرة ال memozation اللي بيتم استخدمها زيها في useMemo لكن في ال type Script 
+
+
+
+export function memoize<T extends (...args: any[]) => any>(fn: T): T {
+  const cache: Record<string, ReturnType<T>> = {};
+
+  return ((...args: Parameters<T>): ReturnType<T> => {
+    const key = args.join("#");
+
+    if (cache[key] !== undefined) {
+      console.log("from cache---", key);
+      return cache[key];
+    }
+
+    console.log("from new calculate---", key);
+    const result = fn(...args);
+    cache[key] = result;
+    return result;
+  }) as T;
+}
+
+const memoSum = memoize((x: number, y: number) => x + y);
+
+console.log(memoSum(3, 4)); // from new calculate
+console.log(memoSum(3, 4)); // from cache
+console.log(memoSum(5, 6)); // from new calculate
+
+
+*/ 
+
+
+// memoize.ts
+
 
 
 import type { Result } from "./helpers";
