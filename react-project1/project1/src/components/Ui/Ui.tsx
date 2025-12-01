@@ -1,6 +1,4 @@
 import type { StoreData } from "../Storedata/Storedata";
-
-
 type Props = {
   item: StoreData;
 };

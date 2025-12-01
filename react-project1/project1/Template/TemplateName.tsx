@@ -5,5 +5,5 @@ export default function TemplateName(){
     useEffect(() => {},[]);
     return <>
     <div className="text-amber-300">TemplateName</div>
-   </>
+    </>
 }
